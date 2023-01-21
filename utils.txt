@@ -1,0 +1,6 @@
+create table clientes(
+    
+  id int(11) primary key AUTO_INCREMENT,
+  nome varchar(17),
+  email varchar(27)
+);
