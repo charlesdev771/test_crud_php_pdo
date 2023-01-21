@@ -7,19 +7,22 @@
     {
         $id = (int)$_GET['delete'];
         $pdo->exec("DELETE FROM clientes WHERE id=$id");
-        echo "Deletado!" . $id;
+        echo "Deleted";
     }
 
     if(isset($_POST['nome']))
     {
         $sql = $pdo->prepare("INSERT INTO clientes VALUES (null, ?,?)");
         $sql->execute(array($_POST['nome'], $_POST['email']));
-        echo "Inserido!";
+        echo "Insert!";
     }
 
-    $nome = "bob";
+    function update_with_id($id)
+    {
+        $nome = "bob";
+        $pdo->exec("UPDATE clientes set nome='$nome' WHERE id='$id'");
+    }
 
-    $pdo->exec("UPDATE clientes set nome='$nome' WHERE id=8");
 ?>
 
 
@@ -38,7 +41,7 @@
 
     foreach ($fetchClientes as $key => $value)
     {
-        echo '<a href="?delete='.$value['id'].'">(X)</a>'.$value['nome'] . ' | ' .$value['email'] . '</a>';
+        echo '<a href="?delete='.$value['id'].'">(Delete)</a>'.$value['nome'] . ' | ' .$value['email'] . '</a>';
         echo '<hr>';
     }
 
