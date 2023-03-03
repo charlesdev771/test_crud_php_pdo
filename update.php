@@ -47,10 +47,10 @@
 
     $fetchClientes = $sql->fetchAll();
 
-    ///foreach ($fetchClientes as $key => $value)
-   // {
-   //     echo '<a href="?update='.$value['id'].'">(update)</a>'.$value['nome'] . ' | ' .$value['email'] . '</a>';
-   //     echo '<hr>';
-   // }
+    foreach ($fetchClientes as $key => $value)
+    {
+        echo '<a href="?update='.$value['id'].'"></a>'.$value['nome'] . ' | ' .$value['email'] . '</a>';
+        echo '<hr>';
+ }
 
 ?>

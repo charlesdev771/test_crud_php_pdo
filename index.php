@@ -23,16 +23,6 @@
     insert_db();
    }
 
-    //if(isset($_GET['update']))
-   //// {
-   //     $nome = $_POST['nome'];
-   //     $email = $_POST['email'];
-    //    $id = $_GET['id'];
-    ///    $sql = $pdo->prepare("UPDATE clientes SET nome = $nome, email = $email WHERE id = 1;");
-    //    $sql->execute(array($_POST['nome'], $_POST['email']));
-    //    echo "Insert!";
-    //}
-
     function update_with_id($id)
     {
         $nome = "bob";
